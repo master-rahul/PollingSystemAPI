@@ -1,3 +1,4 @@
+const Options = require('../models/options');
 module.exports.delete = function (request, response) {
     return response.json(200);
 }

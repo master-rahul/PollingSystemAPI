@@ -1,3 +1,5 @@
+const Questions = require('../models/questions');
+const Options = require('../models/options');
 module.exports.create = function (request, response) {
     return response.json(200);
 }
