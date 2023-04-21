@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
+const Options = require('./options');
 const questionSchema = new mongoose.Schema({
     title : {
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
     options : [{
         type : mongoose.Schema.Types.ObjectId,

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Questions = require('./questions');
 const optionSchmea = new mongoose.Schema({
     text : {
         type : String,
@@ -13,8 +14,12 @@ const optionSchmea = new mongoose.Schema({
         type : String,
         required: false,
         default: ""
+    },
+    question_id :{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : 'Questions'
     }
 }, {timestamps : true});
 
-const Options = mongoose.model('Opitons', optionSchmea);
+const Options = mongoose.model('Options', optionSchmea);
 module.exports = Options;
