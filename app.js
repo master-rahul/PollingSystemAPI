@@ -1,6 +1,6 @@
 const express = require('express');
 const application = express();
-
+const mongoose = require('./config/mongoose');
 application.use('/', require('./routes/index'));
 
 application.listen(8000, function(error){
