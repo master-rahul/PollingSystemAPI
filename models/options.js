@@ -6,11 +6,13 @@ const optionSchmea = new mongoose.Schema({
     },
     votes : {
         type : Number,
-        required : true
+        required: false,
+        default: 0,
     },
     link_to_vote : {
         type : String,
-        required : true
+        required: false,
+        default: ""
     }
 }, {timestamps : true});
 
