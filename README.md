@@ -57,8 +57,13 @@ GET	  	http://theonelogic.in:7000/docs
 
 Tech stack :
   NodeJS
+ 
   ExpressJS
+  
   MongoDB
+  
   Mongoose ODM
+  
   JsonWebToken
+  
   Passport-jwt
