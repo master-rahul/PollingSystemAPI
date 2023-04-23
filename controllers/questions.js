@@ -1,5 +1,7 @@
 const Questions = require('../models/questions');
 const Options = require('../models/options');
+
+// to create questions
 module.exports.create =  async function (request, response) {
     console.log(request.body);
     try {
@@ -11,6 +13,7 @@ module.exports.create =  async function (request, response) {
     }
 }
 
+// to create options in question
 module.exports.option_create = async function (request, response) {
     console.log(request.params.id);
     console.log(request.body);
@@ -34,6 +37,7 @@ module.exports.option_create = async function (request, response) {
     }
 }
 
+// to delete a question
 module.exports.delete = async function (request, response) {
     try {
         const question = await Questions.findById(request.params.id).populate({ path: 'options' });
@@ -56,6 +60,7 @@ module.exports.delete = async function (request, response) {
     return response.json(200);
 }
 
+// to view a question
 module.exports.view = async function (request, response) {
     try {
         const question = await Questions.findById(request.params.id).populate({path : 'options'});
@@ -69,6 +74,7 @@ module.exports.view = async function (request, response) {
     }
 }
 
+// to view all questions
 module.exports.view_all = async function (request, response) {
     try {
         const question = await Questions.find().populate({ path: 'options' });

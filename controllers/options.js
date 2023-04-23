@@ -1,5 +1,7 @@
 const Options = require('../models/options');
 const Questions = require('../models/questions');
+
+// for deleting an option
 module.exports.delete = async function (request, response) {
     try {
         const option = await Options.findById(request.params.id);
@@ -17,6 +19,7 @@ module.exports.delete = async function (request, response) {
     }
 }
 
+// for adding vote
 module.exports.add_vote = async function (request, response) {
     try {
         const option = await Options.findById(request.params.id);
@@ -32,6 +35,7 @@ module.exports.add_vote = async function (request, response) {
     }
 }
 
+// for removing vote
 module.exports.remove_vote = async function (request, response) {
     try {
         const option = await Options.findById(request.params.id);
@@ -50,6 +54,7 @@ module.exports.remove_vote = async function (request, response) {
     }
 }
 
+// for viewing an option
 module.exports.view = async function (request, response) {
     try {
         const option = await Options.findById(request.params.id);
@@ -61,6 +66,7 @@ module.exports.view = async function (request, response) {
     }
 }
 
+// for viewing all options
 module.exports.view_all = async function (request, response) {
     try {
         const option = await Options.find();
