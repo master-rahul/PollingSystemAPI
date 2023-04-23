@@ -4,9 +4,11 @@ module.exports.delete = async function (request, response) {
     try {
         const option = await Options.findById(request.params.id);
         if (option) {
-            await Questions.findByIdAndUpdate(option.question_id, {$pull :{options : request.params.id} });
-            await Options.findByIdAndDelete(request.params.id);
-            return response.status(200).json({ message: 'Option Delete Successfully' });
+            if(option.votes <= 0){
+                await Questions.findByIdAndUpdate(option.question_id, { $pull: { options: request.params.id } });
+                await Options.findByIdAndDelete(request.params.id);
+                return response.status(200).json({ message: 'Option Delete Successfully' });
+            }else return response.status(200).json({message : "Cannot be Delete as Option has atleast 1 votes"});
         }
         return response.status(400).json({ message: 'Invalid Option Id' });
     } catch (err) {
