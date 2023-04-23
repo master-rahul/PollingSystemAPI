@@ -30,17 +30,29 @@ API Endpoints :
   https://grey-spaceship-41383.postman.co/workspace/Team-Workspace~2bb12cd9-55cc-44da-8a78-90a6df2698b6/collection/15129792-90735d81-75be-4eac-9d93-f81d058ed4f1?action=share&creator=15129792
   
 POST 	  http://theonelogic.in:7000/questions/create
+
 POST	  http://theonelogic.in:7000/questions/:id/options/create
+
 DELETE	http://theonelogic.in:7000/questions/:id/delete
+
 GET		  http://theonelogic.in:7000/questions/:id
+
 DELETE	http://theonelogic.in:7000/options/:id/delete
+
 PUT		  http://theonelogic.in:7000options/:id/add_vote
+
 PUT	  	http://theonelogic.in:7000/options/:id/remove_vote
+
 GET	  	http://theonelogic.in:7000/questions/
+
 GET		  http://theonelogic.in:7000/options/:id/view
+
 GET		  http://theonelogic.in:7000/options/
+
 POST	  http://theonelogic.in:7000/auth
+
 GET	  	http://theonelogic.in:7000/docs
+
 
 
 Tech stack :
